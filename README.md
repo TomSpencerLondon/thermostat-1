@@ -13,7 +13,7 @@ $ git clone https://github.com/adrianeyre/thermostat
 $ cd thermostat
 $ git checkout <branch name>
 ```
-where <branch name> is day-two or day-three
+where `<branch name>` is day-two or day-three
 
 ## <a name="Jasmine">Running Jasmine tests</a>
 ```shell
