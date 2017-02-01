@@ -1,5 +1,5 @@
 # Thermostat - Javascript
-#### Technologies: Javascript, Jasmine, JQuery, API
+#### Technologies: Javascript, Jasmine, JQuery, API, HTML, CSS
 
 ### [Makers Academy] (http://www.makersacademy.com) - Week 5 Pair Programming Project
 
