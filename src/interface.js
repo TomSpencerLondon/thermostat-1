@@ -2,6 +2,26 @@ var thermostat = new Thermostat();
 
 $(document).ready(function() {
 
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=8b4169f9317d5d8aabb05fe31ea2354f&units=metric', function(data){
+      $('#current-temperature').text(data.main.temp);
+  });
+
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var token = '&appid=8b4169f9317d5d8aabb05fe31ea2354f';
+    var units = '&units=metric';
+    $.get(url + token + units, function(data) {
+      $('#current-temperature').text(data.main.temp);
+    });
+  };
+
+  displayWeather('london');
+
+  $('#select-city').submit(function(event){
+    event.preventDefault();
+    var city = $('#current-city').val();
+    displayWeather(city);
+    });
 
 updateDisplay();
 
