@@ -53,14 +53,14 @@ Thermostat.prototype.isMaximumTemperature = function() {
 };
 
 Thermostat.prototype.resetTemperature = function() {
-  this.temperature = 20;
+  this.temperature = this.DEFAULT_TEMPERATURE;
 }
 
 Thermostat.prototype.energyUsage = function(){
   if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
     return 'low-usage';
   }
-  if (this.temperature >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.temperature <= this.MAX_LIMIT_PSM_ON) {
+  if (this.temperature <= this.MAX_LIMIT_PSM_ON) {
     return 'medium-usage';
   }
     return 'high-usage';
