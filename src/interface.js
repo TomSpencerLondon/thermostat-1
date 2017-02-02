@@ -1,6 +1,9 @@
 var thermostat = new Thermostat();
+getServerApi();
 
 $(document).ready(function() {
+
+
 
   $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=8b4169f9317d5d8aabb05fe31ea2354f&units=metric', function(data){
       $('#current-temperature').text(data.main.temp);
@@ -58,4 +61,16 @@ updateDisplay();
 function updateDisplay() {
 $('#temperature').text(thermostat.getCurrentTemperature());
 $('#temperature').attr('class', thermostat.energyUsage());
+postServerApi();
+};
+
+function getServerApi() {
+  $.getJSON('http://localhost:4567/api', function(result) {
+    console.log(result['temperature'])
+  })
+
+}
+
+function postServerApi() {
+  $.post('http://localhost:4567/api', {'temperature':thermostat.getCurrentTemperature()})
 };
