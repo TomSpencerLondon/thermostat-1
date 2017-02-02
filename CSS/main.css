@@ -1,3 +1,28 @@
+
+.main {
+  width: 500px;
+      border: 25px solid green;
+      padding: 25px;
+      margin: 150px;
+      background-image: url(http://images.clipartpanda.com/flame-clip-art-pc5BAXdcB.png);
+      background-size: 200px 150px;
+      background-repeat: no-repeat;
+      text-align: center;
+}
+
+
+.main2 {
+      position: relative;
+      width: 500px;
+      border: 25px solid red;
+      padding: 25px;
+      margin: 150px;
+      background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSOW7yORu_n7FxIOvcbw92U6dXTmyqZsFQQcCMN7HzKGHQeExdA);
+      background-size: 150px 100px;
+      background-repeat: no-repeat;
+      text-align: center;
+}
+
 .low-usage {
   color: green;
 }
