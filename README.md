@@ -14,6 +14,7 @@
 $ git clone https://github.com/adrianeyre/thermostat
 $ cd thermostat
 $ git checkout <branch name>
+$ bundle
 ```
 where `<branch name>` is `day-two` or `day-three`
 
