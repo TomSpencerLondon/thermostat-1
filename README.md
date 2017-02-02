@@ -51,4 +51,4 @@ anything else is high-usage.
 
 ## <a name="Heroku">Use live on Heroku</a>
 
-[Termostat] (https://adrianeyre-thermostat.herokuapp.com) Not all functionality works on the Heroku site
+[Termostat:] (https://adrianeyre-thermostat.herokuapp.com) not all functionality works on the Heroku site
