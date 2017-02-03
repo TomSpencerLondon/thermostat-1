@@ -25,7 +25,7 @@ $ open -a safari SpecRunner.html
 
 ## <a name="Sinatra">Running Sinatra Web Server</a>
 ```shell
-$ Ruby app.rb
+$ ruby src/app.rb
 ```
 
 ## <a name="Stories">User Stories</a>
