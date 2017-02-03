@@ -16,17 +16,31 @@ class Server < Sinatra::Base
   post '/api' do
     headers 'Access-Control-Allow-Origin' => '*'
     content_type :json
-    ThermostatData.get(1)
-    ThermostatData.update(temperature: params[:temperature],
-                          city: params[:city],
-                          powersm: params[:powersm])
+    thermostat = ThermostatData.get(1)
+    if thermostat == nil
+      createTable(params[:temperature], params[:city], params[:powersm])
+    else
+      updateTable(params[:temperature], params[:city], params[:powersm])
+    end
     200
   end
 
   get '/api' do
     headers 'Access-Control-Allow-Origin' => '*'
     content_type :json
-    thermostat = ThermostatData.all.to_json #(:temperature => 90)
+    thermostat = ThermostatData.get(1)
+    if thermostat == nil
+      createTable(params[:temperature], params[:city], params[:powersm])
+    end
+    ThermostatData.all.to_json
+  end
+
+  def createTable(temperature=20, city="London", powersm=true)
+    ThermostatData.create(temperature:temperature, city:city, powersm:powersm)
+  end
+
+  def updateTable(temperature=20, city="London", powersm=true)
+    ThermostatData.update(temperature: temperature, city: city, powersm: powersm)
   end
 
   # start the server if ruby file executed directly
