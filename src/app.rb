@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/json'
-# require 'json'
 require_relative 'data_mapper_setup'
 
 class Server < Sinatra::Base
@@ -17,25 +16,17 @@ class Server < Sinatra::Base
   post '/api' do
     headers 'Access-Control-Allow-Origin' => '*'
     content_type :json
-    # DataMapper.auto_migrate!
-    # ThermostatData.first_or_create(temperature: params[:temperature],
-    #                                city: params[:city],
-    #                                powersm: params[:powersm])
-    # DataMapper.finalize
     ThermostatData.get(1)
     ThermostatData.update(temperature: params[:temperature],
-                                   city: params[:city],
-                                   powersm: params[:powersm])
+                          city: params[:city],
+                          powersm: params[:powersm])
     200
   end
 
   get '/api' do
     headers 'Access-Control-Allow-Origin' => '*'
     content_type :json
-    thermostat = ThermostatData.get(1)
-    {'temperature': thermostat.temperature,
-     'city': thermostat.city,
-     'powersm': thermostat.powersm}.to_json
+    thermostat = ThermostatData.all.to_json #(:temperature => 90)
   end
 
   # start the server if ruby file executed directly

@@ -1,5 +1,5 @@
 var thermostat = new Thermostat();
-getServerAPI()
+getServerAPI();
 
 $(document).ready(function() {
 
@@ -30,6 +30,7 @@ $(document).ready(function() {
     else
       {thermostat.powerSaveOff();}
     $('#powersaving').text(thermostat.isPowerSave());
+    postServerAPI()
   });
 });
 
@@ -49,21 +50,27 @@ function displayWeather(city) {
 }
 
 function postServerAPI() {
-  $.post('http://localhost:4567/api', {'temperature':thermostat.getCurrentTemp()})
+  $.post('http://localhost:4567/api', {'temperature':thermostat.getCurrentTemp(),
+                                       'city': $('#current-city').val(),
+                                       'powersm': thermostat.powerSaveStatus})
 }
 
 function getServerAPI() {
-  console.log("HELLO")
-  $.getJSON('http://localhost:4567/api', function(jsonObject) {
+  $.when($.getJSON("http://localhost:4567/api")).then(function(jsonObject){
+    var temp = jsonObject[0].temperature
+    var city = jsonObject[0].city
+    var powersm = jsonObject[0].powersm
 
-    console.log(jsonObject)
-    console.log("HERE")
-    if (jsonObject['temperature']===null || isNaN(jsonObject['temperature'])){
-      var temp = thermostat.DEFAULT_TEMP}
-    else
-      {var temp = jsonObject['temperature']
-    }
+    if (temp===null || isNaN(temp)){temp = thermostat.DEFAULT_TEMP}
     thermostat._temp = parseInt(temp)
     $('#currenttemp').text(temp)
+
+    if (city===null){city = 'London'}
+    $('#current-city').val(city)
+
+    if (powersm===null){powersm=true}
+    thermostat.powerSaveStatus = powersm
+    $("#myonoffswitch").attr('checked', powersm);
+    $('#powersaving').text(powersm)
   })
 }
