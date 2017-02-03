@@ -44,5 +44,5 @@ $('.onoffswitch-label').click(function() {
     $.get( url + token + units, function(data) {
       $('#Ambient-temperature').text(data.main.temp);
     });
-  }
+  } 
 });
