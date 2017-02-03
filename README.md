@@ -1,5 +1,5 @@
 # Thermostat - Javascript
-#### Technologies: Javascript, Ruby, Jasmine, JQuery, API, Sinatra, HTML, CSS
+#### Technologies: Javascript, Ruby, Jasmine, JQuery, API, Sinatra, Datamapper, Postgres, HTML, CSS
 
 ### [Makers Academy] (http://www.makersacademy.com) - Week 5 Pair Programming Project
 
@@ -7,7 +7,6 @@
 * [Running Jasmine tests] (#Jasmine)
 * [Running Sinatra Web Server] (#Sinatra)
 * [User Stories] (#Stories)
-* [Use live on Heroku] (#Heroku)
 
 ## <a name="Setup">Setting up the applicaion</a>
 ```shell
@@ -15,6 +14,7 @@ $ git clone https://github.com/adrianeyre/thermostat
 $ cd thermostat
 $ git checkout <branch name>
 $ bundle
+$ createdb thermostat_development
 ```
 where `<branch name>` is `day-two` or `day-three`
 
@@ -49,7 +49,3 @@ You can reset the temperature to 20 with a reset function
 You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25 is medium-usage,
 anything else is high-usage.
 ```
-
-## <a name="Heroku">Use live on Heroku</a>
-
-[Termostat:] (https://adrianeyre-thermostat.herokuapp.com) not all functionality works on the Heroku site
