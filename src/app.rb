@@ -11,7 +11,7 @@ class Server < Sinatra::Base
   use Rack::MethodOverride
 
   get '/' do
-    File.read('thermostat.html')
+    'HOME PAGE'
   end
 
   post '/api' do

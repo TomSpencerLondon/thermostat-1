@@ -53,8 +53,11 @@ function postServerAPI() {
 }
 
 function getServerAPI() {
+  console.log("HELLO")
   $.getJSON('http://localhost:4567/api', function(jsonObject) {
-    console.log(jsonObject['temperature'])
+
+    console.log(jsonObject)
+    console.log("HERE")
     if (jsonObject['temperature']===null || isNaN(jsonObject['temperature'])){
       var temp = thermostat.DEFAULT_TEMP}
     else
