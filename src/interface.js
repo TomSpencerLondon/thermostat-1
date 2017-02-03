@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
 $('.onoffswitch-label').click(function() {
-    if(thermostat.powerSaveStatus == false) {
+    if(thermostat.powerSaveStatus === false) {
     thermostat.powerSaveOn();
   } else {
       thermostat.powerSaveOff();
