@@ -16,7 +16,7 @@ $ git checkout <branch name>
 $ bundle
 $ createdb thermostat_development
 ```
-where `<branch name>` is `day-two` or `day-three`
+where `<branch name>` is `day-two`, `day-three`, `day-four` or `day-five`
 
 ## <a name="Jasmine">Running Jasmine tests</a>
 ```shell
