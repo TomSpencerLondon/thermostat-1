@@ -1,12 +1,12 @@
 # Thermostat - Javascript
 #### Technologies: Javascript, Ruby, Jasmine, JQuery, API, Sinatra, Datamapper, Postgres, HTML, CSS
 
-### [Makers Academy] (http://www.makersacademy.com) - Week 5 Pair Programming Project
+### [Makers Academy](http://www.makersacademy.com) - Week 5 Pair Programming Project
 
-* [Setting up the applicaion] (#Setup)
-* [Running Jasmine tests] (#Jasmine)
-* [Running Sinatra Web Server] (#Sinatra)
-* [User Stories] (#Stories)
+* [Setting up the applicaion](#Setup)
+* [Running Jasmine tests](#Jasmine)
+* [Running Sinatra Web Server](#Sinatra)
+* [User Stories](#Stories)
 
 ## <a name="Setup">Setting up the applicaion</a>
 ```shell
